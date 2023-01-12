@@ -194,11 +194,6 @@ I'm sure Federer will win me a couple of bucks! But let's see which agency tends
 First, let me create a dataframe for this analysis.
 
 ```{r}
-library(readr)
-Data <- read_csv("Data.csv")
-```
-
-```{r}
 agencies = Data [,12:55]
 rank_agencies <- select(agencies, -3:-15)
 rank_agencies2 <- select(rank_agencies, -27:-30) 
@@ -257,12 +252,14 @@ rankagencies$SJ_Lose_Odds <- ifelse(rankagencies$LRank == rankagencies$SJL, 1, 0
 Okay then, lets start analyzing these.
 
 ```{r}
+
 summary(rankagencies)
 scores = rankagencies [,27:47]
 
 scores %>% 
   group_by(Season) %>%
   summarize(count = n())
+  
 ```
 
 ```{r}
