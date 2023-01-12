@@ -6,7 +6,7 @@ library(ggplot2)
 library(reshape2)
 
 
-#Create table of agencies score and season to get to know the data
+#Create table of agencies score and season to get to know the data.
 agencies = Data [,12:55]
 rank_agencies <- select(agencies, -3:-15)
 rank_agencies2 <- select(rank_agencies, -27:-30) 
